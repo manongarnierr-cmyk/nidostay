@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nido Stay — Conserjería Airbnb Barcelona</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{--bl:#E8F4FB;--bl-mid:#A8D4EE;--bl-deep:#2A7BA8;--cream:#FAFAF9;--dark:#151C22;--muted:#5A6875;--white:#FFFFFF;}
+body{font-family:'Lato',sans-serif;background:var(--cream);color:var(--dark);font-size:15px;}
+.page{max-width:680px;margin:0 auto;padding:2.5rem 1.5rem 3rem;}
+.header{text-align:center;padding:2rem 0 1.75rem;margin-bottom:1.5rem;}
+.logo{font-family:'Cormorant Garamond',serif;font-size:52px;font-weight:300;letter-spacing:3px;color:var(--dark);}
+.logo em{color:var(--bl-deep);font-style:italic;}
+.tagline{font-size:12px;letter-spacing:0.3em;color:var(--muted);text-transform:uppercase;margin-top:8px;font-weight:300;}
+.header-line{width:60px;height:1px;background:var(--bl-mid);margin:14px auto 0;}
+.cat-banner{background:var(--bl);border-radius:10px;padding:10px 18px;margin-bottom:1.5rem;text-align:center;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:15px;color:var(--bl-deep);}
+.why{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;font-style:italic;color:var(--dark);line-height:1.65;text-align:center;padding:1.25rem 1rem;margin-bottom:1.75rem;}
+.section-label{font-size:11px;text-transform:uppercase;letter-spacing:0.25em;color:var(--bl-deep);font-weight:700;margin-bottom:14px;}
+.pillars-title{font-size:12px;text-transform:uppercase;letter-spacing:0.15em;color:var(--muted);margin-bottom:12px;font-weight:300;text-align:center;}
+.how-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:1.75rem;}
+.how-card{background:var(--white);border:1px solid var(--bl);border-radius:12px;padding:1.1rem;}
+.how-title{font-size:13.5px;font-weight:700;color:var(--dark);margin-bottom:5px;}
+.how-desc{font-size:13px;color:var(--muted);line-height:1.65;font-weight:300;}
+.what-list{display:flex;flex-direction:column;gap:9px;margin-bottom:1.75rem;}
+.what-item{background:var(--white);border:1px solid var(--bl);border-radius:12px;padding:1rem 1.2rem;display:flex;gap:12px;align-items:flex-start;}
+.what-item.exclu{border-left:2px solid var(--bl-deep);}
+.what-num{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;color:var(--bl-mid);flex-shrink:0;line-height:1;margin-top:2px;min-width:24px;}
+.what-title{font-size:14px;font-weight:700;color:var(--dark);margin-bottom:4px;}
+.what-desc{font-size:13px;color:var(--muted);line-height:1.65;font-weight:300;}
+.exclu-badge{display:inline-block;font-size:9px;text-transform:uppercase;letter-spacing:0.12em;color:var(--bl-deep);background:var(--bl);padding:2px 9px;border-radius:20px;margin-bottom:5px;font-weight:700;}
+.who{background:var(--bl);border-radius:16px;padding:1.5rem 1.6rem;margin-bottom:1.75rem;}
+.who-name{font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:400;color:var(--dark);margin-bottom:7px;}
+.who-text{font-size:13.5px;color:var(--muted);line-height:1.8;font-weight:300;}
+.pricing{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:.75rem;}
+.price-card{background:var(--white);border:1px solid var(--bl);border-radius:12px;padding:1.3rem;}
+.price-card.featured{background:var(--dark);border-color:var(--dark);}
+.price-name{font-size:11px;text-transform:uppercase;letter-spacing:0.15em;color:var(--muted);margin-bottom:8px;font-weight:700;}
+.price-card.featured .price-name{color:rgba(255,255,255,0.4);}
+.price-amount{font-family:'Cormorant Garamond',serif;font-size:38px;font-weight:300;color:var(--dark);line-height:1;}
+.price-card.featured .price-amount{color:var(--white);}
+.price-sub{font-size:12.5px;color:var(--muted);margin-top:7px;font-weight:300;}
+.price-card.featured .price-sub{color:rgba(255,255,255,0.4);}
+.price-choose{text-align:center;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:14px;color:var(--muted);margin-bottom:1.6rem;}
+.promo{background:var(--white);border:1px solid var(--bl);border-radius:12px;padding:1.1rem 1.3rem;margin-bottom:1.75rem;}
+.promo-label{font-size:11px;text-transform:uppercase;letter-spacing:0.12em;color:var(--bl-deep);margin-bottom:8px;font-weight:700;}
+.promo-text{font-size:13.5px;color:var(--muted);line-height:1.75;font-weight:300;}
+.contact{background:var(--bl);border-radius:16px;padding:2rem;text-align:center;}
+.contact-title{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:300;color:var(--dark);margin-bottom:8px;}
+.contact-sub{font-size:13.5px;color:var(--muted);margin-bottom:1.3rem;font-weight:300;}
+.contact-links{display:flex;flex-direction:column;gap:9px;align-items:center;}
+.contact-link{display:inline-flex;align-items:center;gap:9px;background:var(--white);color:var(--dark);font-size:14px;padding:10px 24px;border-radius:8px;}
+.contact-dot{width:5px;height:5px;border-radius:50%;background:var(--bl-deep);flex-shrink:0;}
+.footer{text-align:center;margin-top:2rem;font-size:10px;color:var(--bl-mid);letter-spacing:0.15em;text-transform:uppercase;}
+@media(max-width:500px){.how-grid{grid-template-columns:1fr;}.pricing{grid-template-columns:1fr;}.logo{font-size:40px;}}
+</style>
+</head>
+<body>
+<div class="page">
+<div class="header">
+  <div class="logo">Nido<em>Stay</em></div>
+  <div class="tagline">El arte de no tener que gestionar nada</div>
+  <div class="header-line"></div>
+</div>
+<div class="cat-banner">Si sou propietaris a Barcelona, parlem!</div>
+<div class="why">Porque su propiedad debería trabajar para usted — no al revés.</div>
+<div style="margin-bottom:1.75rem;">
+  <div class="pillars-title">Los 3 compromisos Nido Stay</div>
+  <div class="how-grid">
+    <div class="how-card"><div class="how-title">Buen humor</div><div class="how-desc">La gestión seria no impide la sonrisa. Prometido.</div></div>
+    <div class="how-card"><div class="how-title">Multi-lingüe</div><div class="how-desc">FR · ES · EN hablados — sus viajeros siempre se sentirán comprendidos.</div></div>
+    <div class="how-card"><div class="how-title">Cero carga mental</div><div class="how-desc">Los imprevistos gestionados antes de que usted lo sepa.</div></div>
+  </div>
+</div>
+<div style="margin-bottom:1.75rem;">
+  <div class="section-label">Lo que se gestiona</div>
+  <div class="what-list">
+    <div class="what-item"><div class="what-num">01</div><div><div class="what-title">Mensajes y seguimiento — 24h/24</div><div class="what-desc">Respuesta en menos de 1h. Peticiones especiales, quejas, retrasos. Relance para reviews 5 estrellas.</div></div></div>
+    <div class="what-item"><div class="what-num">02</div><div><div class="what-title">Check-in & check-out</div><div class="what-desc">Caja de llaves conectada o bienvenida personal. Verificación del estado tras cada salida.</div></div></div>
+    <div class="what-item"><div class="what-num">03</div><div><div class="what-title">Coordinación de la limpieza</div><div class="what-desc">Equipo de confianza activado automáticamente. Checklist por habitación. Ropa de cama incluida.</div></div></div>
+    <div class="what-item"><div class="what-num">04</div><div><div class="what-title">Optimización del anuncio y fotos</div><div class="what-desc">Sesión fotográfica profesional. Título y descripción multilingüe. Actualización estacional.</div></div></div>
+    <div class="what-item"><div class="what-num">05</div><div><div class="what-title">Gestión de emergencias</div><div class="what-desc">Usted informado, nunca molestado.</div></div></div>
+    <div class="what-item exclu"><div class="what-num">✦</div><div><div class="exclu-badge">Exclusivo Nido Stay</div><div class="what-title">Informe mensual al propietario</div><div class="what-desc">Ingresos, ocupación, reseñas — un resumen claro cada mes.</div></div></div>
+    <div class="what-item exclu"><div class="what-num">✦</div><div><div class="exclu-badge">Exclusivo Nido Stay</div><div class="what-title">Fotos antes/después de cada limpieza</div><div class="what-desc">Recibe fotos tras cada limpieza. Cero dudas sobre el estado.</div></div></div>
+    <div class="what-item exclu"><div class="what-num">✦</div><div><div class="exclu-badge">Exclusivo Nido Stay</div><div class="what-title">Sin o con compromiso</div><div class="what-desc">Sin compromiso o tarifa anual — usted elige lo que le conviene.</div></div></div>
+  </div>
+</div>
+<div style="margin-bottom:1.75rem;">
+  <div class="section-label">¿Quién soy?</div>
+  <div class="who">
+    <div class="who-name">Manon, fundadora de Nido Stay</div>
+    <div class="who-text">Tras 3 años gestionando la conserjería de una agencia de alquiler de barcos y cruceros, aprendí una cosa: los detalles lo son todo. Creo Nido Stay para traer ese mismo nivel de exigencia a su propiedad en Barcelona — siempre con una sonrisa.</div>
+  </div>
+</div>
+<div style="margin-bottom:.5rem;"><div class="section-label">Tarifas</div></div>
+<div class="pricing">
+  <div class="price-card"><div class="price-name">Fórmula Variable</div><div class="price-amount">20%</div><div class="price-sub">Comisión sobre ingresos netos.</div></div>
+  <div class="price-card featured"><div class="price-name">Fórmula Fija</div><div class="price-amount">350€</div><div class="price-sub">Tarifa mensual.</div></div>
+</div>
+<div class="price-choose">Usted elige.</div>
+<div class="promo">
+  <div class="promo-label">Mi compromiso</div>
+  <div class="promo-text">1er mes al 15% o 250€ a cambio de un testimonio. ¡Porque todos tenemos que empezar en algún lugar!</div>
+</div>
+<div class="contact">
+  <div class="contact-title">Conozcámonos</div>
+  <div class="contact-sub">Una conversación real sobre su propiedad.</div>
+  <div class="contact-links">
+    <div class="contact-link"><div class="contact-dot"></div>Manon · nidostay@gmail.com</div>
+    <div class="contact-link"><div class="contact-dot"></div>WhatsApp · +33 7 69 17 95 25</div>
+  </div>
+</div>
+<div class="footer">Nido Stay · Barcelona · nidostay@gmail.com</div>
+</div>
+</body>
+</html>
